@@ -1,0 +1,39 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-recommended-vue/scss"],
+  "ignoreFiles": ["**/*.js", "**/*.md"],
+  "rules": {
+    "hue-degree-notation": null,
+    "value-keyword-case": [
+      "lower",
+      {
+        "camelCaseSvgKeywords": true,
+        "ignoreFunctions": ["v-bind"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.vue", "**/*.vue"],
+      "rules": {
+        "max-line-length": null,
+        "value-no-vendor-prefix": [
+          true,
+          {
+            "ignoreValues": ["box"]
+          }
+        ],
+        "no-descending-specificity": null,
+        "length-zero-no-unit": [
+          true,
+          {
+            "ignore": ["custom-properties"]
+          }
+        ]
+      }
+    }
+  ]
+}
